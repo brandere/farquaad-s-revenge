@@ -8,7 +8,6 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameWorld extends World
 {
-
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -16,6 +15,7 @@ public class GameWorld extends World
     public GameWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(900, 700, 1); 
+        super(700, 800, 1); 
+        addObject(new Player(), 500, 300);
     }
 }
