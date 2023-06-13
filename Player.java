@@ -17,7 +17,8 @@ public class Player extends Actor
        setLocation(getX(), getY() - gravity);
        checkForJump();
        if (isTouching(Plank.class)){
-           setLocation(getX(),getY() + 1);
+           gravity = 1;
+           setLocation(getX(),getY());
        }
         //gravity();
     }
@@ -25,7 +26,7 @@ public class Player extends Actor
     {
         
         if (Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w")){
-            setLocation(getX(), getY() - 3);
+            setLocation(getX(), getY() - 20);
            
         }
         
