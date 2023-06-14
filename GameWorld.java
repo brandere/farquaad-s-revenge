@@ -14,7 +14,32 @@ public class GameWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(700, 800, 1); 
-        addObject(new Player(), 500, 300);
+        
+        
+        addObject(new Plank(), 200, 500);
+        addObject(new Plank(), 250, 500);
+        addObject(new Plank(), 300, 500);
+        addObject(new Plank(), 350, 500);
+        addObject(new Plank(), 400, 500);
+        addObject(new Plank(), 450, 500);
         addObject(new Plank(), 500, 500);
+        addObject(new Plank(), 550, 500);
+        addObject(new Plank(), 600, 500);
+        addObject(new Plank(), 650, 500);
+        addObject(new Ladder(), 300, 350);
+        addObject(new Ladder(), 300, 400);
+        addObject(new Ladder(), 300, 450);
+        
+         addObject(new Plank(), 200, 343);
+        addObject(new Plank(), 250, 343);
+        addObject(new Plank(), 300, 343);
+        addObject(new Plank(), 350, 343);
+        addObject(new Plank(), 400, 343);
+        addObject(new Plank(), 450, 343);
+        addObject(new Plank(), 500, 343);
+        addObject(new Plank(), 550, 343);
+        addObject(new Plank(), 600, 343);
+        addObject(new Plank(), 650, 343);
+        addObject(new Player(), 209, 453);
     }
 }

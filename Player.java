@@ -1,58 +1,89 @@
-import greenfoot.*;
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Character that can only jump when not in air.
+ */
 public class Player extends Actor
 {
-    
-    private int speed;
-    private int gravity;
+    int deltaX;
+    int deltaY;
+    final int speedX = 4;
+    final int speedY = 4;
+    final int jumpSpeed = 15;
+    final int gravity = 1;
     
     /**
-     * Act - do whatever the Player wants to do. This method is called whenever
+     * Boolean (True/False) variable used to remember whether character is in air or not.
+     */
+    boolean isInAir;
+    
+
+    
+    
+    
+    /**
+     * Act - do whatever the OneJumpPlayer wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        speed = 5;
-        getInputs();
-        gravity--;
-       setLocation(getX(), getY() - gravity);
-       checkForJump();
-       if (isTouching(Plank.class)){
-           gravity = 1;
-           setLocation(getX(),getY());
-       }
-        //gravity();
-    }
-    public void getInputs()
-    {
         
-        if (Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("w")){
-            setLocation(getX(), getY() - 20);
-           
-        }
-        
-        if (Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("s")){
-            setLocation(getX(), getY() + 3);
-       
-        }
-       
-        if (Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("a")){
-            setLocation(getX() - 3, getY());
-
-        }
-       
-        if (Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("d")){
-            setLocation(getX() + 3, getY());
-        }
+        movementControls();
+        applyGravity();
     }
     
-    private void checkForJump()
+    /**
+     * Checks movement keys and updates position.
+     */
+    public void movementControls()
     {
+        deltaX = 0;
         
-        Actor a = getOneIntersectingObject(Plank.class);
-        if (isTouching(Plank.class) && Greenfoot.isKeyDown("space")){
-             gravity = 20; // this will make the character jump
+        if (Greenfoot.isKeyDown("left"))
+        {
+            deltaX = deltaX - speedX;
+        }
+        
+        if (Greenfoot.isKeyDown("right"))
+        {
+            deltaX = deltaX + speedX;
+        }
+        
+        if (isInAir == false && Greenfoot.isKeyDown("space"))
+        {
+            deltaY = -jumpSpeed;
+        }
+        
+        if (Greenfoot.isKeyDown("up") && isTouching(Ladder.class))
+        {
+            
+            deltaY = deltaY - speedY;
+        }
+        if (Greenfoot.isKeyDown("down") && isTouching(Ladder.class))
+        {
+            
+            deltaY = deltaY + speedY;
+        }
+        
+        
+        
+        setLocation(getX() + deltaX, getY() + deltaY);
+    }
+    
+    /**
+     * Checks whether standing on platform, and applies gravity if not.
+     */
+    public void applyGravity()
+    {
+        if (isTouching(Plank.class) || isTouching(Ladder.class))
+        {
+            deltaY = 0;     // Don't apply gravity.
+            isInAir = false;
+        }
+        else    
+        {
+            deltaY = deltaY + gravity;// Apply gravity.
+            isInAir = true;
         }
     }
 }
-
-
