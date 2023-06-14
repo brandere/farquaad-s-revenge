@@ -19,5 +19,11 @@ public class StartScreen extends World
         super(700, 800, 1,false); 
         addObject(new TitleText(), 750,60);
         addObject(new Help(), 31,34);
+        addObject(new Enter(), 710,100);
+    }
+    public void act(){
+        if (Greenfoot.isKeyDown("ENTER")){
+            Greenfoot.setWorld(new GameWorld());
+        }
     }
 }

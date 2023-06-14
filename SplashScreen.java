@@ -17,6 +17,12 @@ public class SplashScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(700, 800, 1); 
-        
+ 
+    
+        if (Greenfoot.isKeyDown("backspace")){
+            Greenfoot.setWorld(new StartScreen());
+        }
+
     }
 }
+
