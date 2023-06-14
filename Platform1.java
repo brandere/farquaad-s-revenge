@@ -1,19 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class player here.
+ * Write a description of class Platform here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Player extends Actor
+public class Platform1 extends Actor
 {
     /**
-     * Act - do whatever the player wants to do. This method is called whenever
+     * Act - do whatever the Platform wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-       
+        setRotation(7);
     }
 }

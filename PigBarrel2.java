@@ -1,14 +1,16 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class PigBarrel here.
+ * Write a description of class PigBarrel2 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class PigBarrel extends Actor
+public class PigBarrel2 extends Actor
 {
-    private int gravity = 9;
+     private int gravity = 9;
+    int speed = 5;
+
  
     /**
      * Act - do whatever the PigBarrel wants to do. This method is called whenever
@@ -16,12 +18,12 @@ public class PigBarrel extends Actor
      */
     public void act()
     {
+        int xLoc = getX();
         int yLoc = getY();
-        setLocation(getX(), getY() + gravity);
-         if(getY() >= 795){
-            getWorld().removeObject(this);
-         }
-    
-     
+    setLocation(xLoc, yLoc + gravity);
+            if (yLoc > 790){
+               getWorld().removeObject(this);
+            }
+             
 }
 }

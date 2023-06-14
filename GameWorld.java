@@ -8,9 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GameWorld extends World
 {
-    Player player;
-     int getPig;
-    boolean win = false;
+    Player player = new Player();
+    int getPig = 0;
+    int countDown = 10;
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -19,19 +19,32 @@ public class GameWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(700, 800, 1);
-        player = new Player();
-        addObject(player, 500, 500);
-        addObject(new PigBarrel(), 100, 50);
+        addObject(new PigBarrel1(), 100, 50);
+        //floor code
+        addObject(new FlatFloor(), 20, 795);
+        addObject(new FlatFloor(), 69, 795);
+        addObject(new FlatFloor(), 165, 795);
+        addObject(new FlatFloor(), 260, 795);
+        addObject(new FlatFloor(), 356, 795);
+        addObject(new Platform2(),554,776);
+        addObject(new Platform1(), 477,669);
+        addObject(new Platform1(), 182,632);
+        addObject(new FlatFloor2(), 1, 616);
+        addObject(new Platform2(),221,522);
+        addObject(new Platform2(),515,485);
+        addObject(new FlatFloor(),705,468);
+         act();
     }
+
     public void act(){
-       while(win = false){
         getPig++;
-        if (getPig > 180){
+        if (getPig == 420){
+            addObject(new PigBarrel2(),player.getX(), 50);
             getPig = 0;
-            addObject(new PigBarrel(),player.getX(), 50);
         }
+
     }
-}
+
 }
 
 
