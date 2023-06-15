@@ -14,6 +14,6 @@ public class Platform1 extends Actor
      */
     public void act()
     {
-        setRotation(7);
+        setRotation(4);
     }
 }

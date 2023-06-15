@@ -33,19 +33,19 @@ public class PigBarrel1 extends Actor
             //Detect Collision
             if (isTouching(Platform1.class)){
                 setLocation(xLoc, yLoc);
-                move(6);
+                move(4);
             }
             if(isTouching(Platform2.class)){
                 setLocation(xLoc, yLoc);
-                move(-6);
+                move(-4);
             }
             if(isTouching(FlatFloor.class)){
                 setLocation(xLoc, yLoc);
-                move(-6);
+                move(-4);
             }
             if(isTouching(FlatFloor2.class)){
                 setLocation(xLoc, yLoc);
-                move(6);
+                move(4);
             }
 
             if (xLoc < 10){

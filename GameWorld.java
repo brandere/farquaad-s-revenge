@@ -18,22 +18,31 @@ public class GameWorld extends World
     public GameWorld()
     {    
         super(700, 800, 1);
-        addObject(new PigBarrel1(), 100, 50);
+        addObject(new PigBarrel1(), 496, 161);
         //floor code
         addObject(new FlatFloor(), 20, 795);
         addObject(new FlatFloor(), 69, 795);
         addObject(new FlatFloor(), 165, 795);
         addObject(new FlatFloor(), 260, 795);
         addObject(new FlatFloor(), 356, 795);
-        addObject(new Platform2(),554,776);
-        addObject(new Platform1(), 477,669);
-        addObject(new Platform1(), 182,632);
-        addObject(new FlatFloor2(), 1, 616);
-        addObject(new Platform2(),221,522);
-        addObject(new Platform2(),515,485);
-        addObject(new FlatFloor(),705,468);
-    
-
+        addObject(new Platform2(),554,785);
+        addObject(new Platform1(), 474,663);
+        addObject(new Platform1(), 178,642);
+        addObject(new FlatFloor2(), 1, 631);
+        addObject(new Platform2(),225,522);
+        addObject(new Platform2(),514,501);
+        addObject(new FlatFloor(),705,491);
+        addObject(new Platform1(), 467,386);
+        addObject(new Platform1(), 368,378);
+        addObject(new FlatFloor2(), 172, 368);
+        addObject(new FlatFloor2(), 79, 368);
+        addObject(new FlatFloor2(), 1, 368);
+        addObject(new Platform2(),220,268);
+        addObject(new Platform2(),368,258);
+        addObject(new FlatFloor2(), 565, 247);
+        addObject(new FlatFloor2(), 663, 247);
+        addObject(new FlatFloor2(), 77, 136);
+        addObject(new FlatFloor2(), 175, 136);
     }
 
     public void act(){
