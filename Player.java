@@ -1,19 +1,89 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class player here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Character that can only jump when not in air.
  */
 public class Player extends Actor
 {
+    int deltaX;
+    int deltaY;
+    final int speedX = 4;
+    final int speedY = 4;
+    final int jumpSpeed = 15;
+    final int gravity = 1;
+    
     /**
-     * Act - do whatever the player wants to do. This method is called whenever
+     * Boolean (True/False) variable used to remember whether character is in air or not.
+     */
+    boolean isInAir;
+    
+
+    
+    
+    
+    /**
+     * Act - do whatever the OneJumpPlayer wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-       
+        
+        movementControls();
+        applyGravity();
+    }
+    
+    /**
+     * Checks movement keys and updates position.
+     */
+    public void movementControls()
+    {
+        deltaX = 0;
+        
+        if (Greenfoot.isKeyDown("left"))
+        {
+            deltaX = deltaX - speedX;
+        }
+        
+        if (Greenfoot.isKeyDown("right"))
+        {
+            deltaX = deltaX + speedX;
+        }
+        
+        if (isInAir == false && Greenfoot.isKeyDown("space"))
+        {
+            deltaY = -jumpSpeed;
+        }
+        
+        if (Greenfoot.isKeyDown("up") && isTouching(Ladder.class))
+        {
+            
+            deltaY = deltaY - speedY;
+        }
+        if (Greenfoot.isKeyDown("down") && isTouching(Ladder.class))
+        {
+            
+            deltaY = deltaY + speedY;
+        }
+        
+        
+        
+        setLocation(getX() + deltaX, getY() + deltaY);
+    }
+    
+    /**
+     * Checks whether standing on platform, and applies gravity if not.
+     */
+    public void applyGravity()
+    {
+        if (isTouching(Plank.class) || isTouching(Ladder.class))
+        {
+            deltaY = 0;     // Don't apply gravity.
+            isInAir = false;
+        }
+        else    
+        {
+            deltaY = deltaY + gravity;// Apply gravity.
+            isInAir = true;
+        }
     }
 }
