@@ -18,6 +18,7 @@ public class GameWorld extends World
     public GameWorld()
     {    
         super(700, 800, 1);
+        addObject(player, 36,746);
         addObject(new PigBarrel1(), 496, 161);
         //floor code
         addObject(new FlatFloor(), 20, 795);
