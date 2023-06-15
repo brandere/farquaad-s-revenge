@@ -32,6 +32,8 @@ public class GameWorld extends World
         addObject(new Platform2(),221,522);
         addObject(new Platform2(),515,485);
         addObject(new FlatFloor(),705,468);
+        addObject(new Shrek(), 561,73);
+        addObject(new Player(), 0,0);
     
 
     }
