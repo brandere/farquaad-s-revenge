@@ -10,6 +10,7 @@ public class GameWorld extends World
 {
     Player player = new Player();
     int getPig = 0;
+    int pigBarrel = 0;
     int countDown = 10;
     /**
      * Constructor for objects of class MyWorld.
@@ -19,6 +20,7 @@ public class GameWorld extends World
     {    
         super(700, 800, 1);
         addObject(player, 36,746);
+        addObject(new Damsel(), 130, 75);
         addObject(new PigBarrel1(), 496, 161);
         //floor code
         addObject(new FlatFloor(), 20, 795);
@@ -44,15 +46,32 @@ public class GameWorld extends World
         addObject(new FlatFloor2(), 663, 247);
         addObject(new FlatFloor2(), 77, 136);
         addObject(new FlatFloor2(), 175, 136);
+        addObject(new Ladder(), 443,279);
+        addObject(new Ladder(), 443,340);
+        addObject(new Ladder(), 591,424);
+        addObject(new Ladder(), 591,468);
+        addObject(new Ladder(), 286,398);
+        addObject(new Ladder(), 286,470);
+        addObject(new Ladder(), 165,555);
+        addObject(new Ladder(), 165,600);
+        addObject(new Ladder(), 478,547);
+        addObject(new Ladder(), 478,523);
+        addObject(new Ladder(), 478,619);
+        addObject(new Ladder(), 332,683);
+        addObject(new Ladder(), 332,748);
     }
 
     public void act(){
         getPig++;
-        if (getPig == 420){
+        pigBarrel++;
+        if (getPig == 540){
             addObject(new PigBarrel2(),player.getX(), 50);
             getPig = 0;
         }
-
+        if(pigBarrel == 240){
+            addObject(new PigBarrel1(),496,161);
+            pigBarrel = 0;
+        }
     }
 
 }
