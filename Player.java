@@ -27,7 +27,8 @@ public class Player extends Actor
      */
     public void act()
     {
-        
+        int xLoc = getX();
+        int yLoc = getY();
         movementControls();
         applyGravity();
     }
@@ -75,7 +76,7 @@ public class Player extends Actor
      */
     public void applyGravity()
     {
-        if (isTouching(Plank.class) || isTouching(Ladder.class))
+        if (isTouching(Platform.class) || isTouching(FlatFloor.class) || isTouching(FlatFloor2.class) || isTouching(Ladder.class))
         {
             deltaY = 0;     // Don't apply gravity.
             isInAir = false;

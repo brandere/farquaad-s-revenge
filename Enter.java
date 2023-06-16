@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Enter here.
+ * Write a description of class Ent here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -9,11 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Enter extends Actor
 {
     /**
-     * Act - do whatever the Enter wants to do. This method is called whenever
+     * Act - do whatever the Ent wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
+       
          GreenfootImage img = new GreenfootImage (900,100);//creates image
        //img.setColor(new Color(0,0,0));//sets color
        //img.fill();//Fills image
