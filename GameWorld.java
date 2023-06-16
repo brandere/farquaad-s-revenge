@@ -27,14 +27,9 @@ public class GameWorld extends World
         addObject(new FlatFloor(), 260, 795);
         addObject(new FlatFloor(), 356, 795);
 
-        addObject(new Platform2(),554,776);
-        addObject(new Platform1(), 477,669);
-        addObject(new Platform1(), 182,632);
-        addObject(new FlatFloor2(), 1, 616);
-        addObject(new Platform2(),221,522);
-        addObject(new Platform2(),515,485);
-        addObject(new FlatFloor(),705,468);
-        addObject(new Shrek(), 561,73);
+        
+        addObject(new Shrek(), 537,187);
+        addObject(new pigStack(), 648,205);
         
     
 
