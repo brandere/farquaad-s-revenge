@@ -39,11 +39,11 @@ public class PigBarrel1 extends Actor
                 setLocation(xLoc, yLoc);
                 move(-4);
             }
-            if(isTouching(FlatFloor.class)){
+            if(isTouching(FlatFloor2.class)){
                 setLocation(xLoc, yLoc);
                 move(-4);
             }
-            if(isTouching(FlatFloor2.class)){
+            if(isTouching(FlatFloor1.class)){
                 setLocation(xLoc, yLoc);
                 move(4);
             }
