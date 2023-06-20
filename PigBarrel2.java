@@ -9,7 +9,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PigBarrel2 extends Actor
 {
      private int gravity = 4;
+
     int speed = 2;
+
+    int speed = 5;
+
 
  
     /**
