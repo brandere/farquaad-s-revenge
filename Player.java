@@ -7,10 +7,10 @@ import java.util.List;
 public class Player extends Actor
 {
     int walkSpeed = 5;
+    //vertical speed
     int vSpeed = 0;
     int acceleration = 1;
     int jumpStrength = 16;
-    
     int frame = 1;
     int animationCounter = 0;
 
@@ -38,20 +38,20 @@ public class Player extends Actor
     {
         if(Greenfoot.isKeyDown("right"))
         {
-            new GreenfootImage("farquaad.png");
+            setImage("farquaad.png");
             moveRight();
         }
         if(Greenfoot.isKeyDown("left"))
         {
-            new GreenfootImage("farquaad.png");
+            setImage("farquaad.png");
             moveLeft();
         }
         if (Greenfoot.isKeyDown("up")) {
-            new GreenfootImage("Farquaadback.png");
+            setImage("Farquaadback.png");
             moveUp();
         }
         if (Greenfoot.isKeyDown("down")) {
-            new GreenfootImage("Farquaadback.png");
+            setImage("Farquaadback.png");
             moveDown();
         }
         if(Greenfoot.isKeyDown("space")&& onGround())
