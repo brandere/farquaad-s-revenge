@@ -28,6 +28,14 @@ public class GameWorld extends World
         addObject(new FlatFloor(), 165, 795);
         addObject(new FlatFloor(), 260, 795);
         addObject(new FlatFloor(), 356, 795);
+
+        
+        addObject(new Shrek(), 537,187);
+        addObject(new pigStack(), 648,205);
+        
+    
+
+
         addObject(new Platform2(),554,785);
         addObject(new Platform1(), 474,663);
         addObject(new Platform1(), 178,642);
@@ -46,6 +54,7 @@ public class GameWorld extends World
         addObject(new FlatFloor2(), 663, 247);
         addObject(new FlatFloor2(), 77, 136);
         addObject(new FlatFloor2(), 175, 136);
+
         addObject(new Ladder(), 443,279);
         addObject(new Ladder(), 443,340);
         addObject(new Ladder(), 591,424);
@@ -59,6 +68,7 @@ public class GameWorld extends World
         addObject(new Ladder(), 478,619);
         addObject(new Ladder(), 332,683);
         addObject(new Ladder(), 332,748);
+
     }
 
     public void act(){
