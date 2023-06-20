@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class extraplayer here.
+ * Write a description of class TopLadder here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class extraplayer extends Actor
+public class TopLadder extends Ladder
 {
     /**
-     * Act - do whatever the extraplayer wants to do. This method is called whenever
+     * Act - do whatever the TopLadder wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
