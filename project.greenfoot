@@ -10,8 +10,13 @@ class.FlatFloor2.image=Platform2.png
 class.GameWorld.image=Untitled.png
 class.Help.image=images.png
 class.LoseScreen.image=losescreen.png
+
+class.PigBarrel1.image=PigUp.png
+class.PigBarrel2.image=PigUp.png
+
 class.PigBarrel1.image=pig\ 2.png
 class.PigBarrel2.image=pig\ 1.png
+
 class.Platform1.image=Platform.png
 class.Platform2.image=Platform.png
 class.Player.image=bomb.png
@@ -21,5 +26,4 @@ class.TopLadder.image=Ladder.png
 class.WIN.image=WIN.png
 class.WinScreen.image=winScreen.png
 class.lose.image=lose\ player.png
-class.pigStack.image=pig\ stack.png
 
