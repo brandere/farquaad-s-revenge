@@ -54,9 +54,7 @@ public class GameWorld extends World
         addObject(new FlatFloor2(), 663, 247);
         addObject(new FlatFloor2(), 77, 136);
         addObject(new FlatFloor2(), 175, 136);
-<<<<<<< HEAD
 
-=======
         addObject(new Ladder(), 443,279);
         addObject(new Ladder(), 443,340);
         addObject(new Ladder(), 591,424);
@@ -70,7 +68,7 @@ public class GameWorld extends World
         addObject(new Ladder(), 478,619);
         addObject(new Ladder(), 332,683);
         addObject(new Ladder(), 332,748);
->>>>>>> main
+
     }
 
     public void act(){
