@@ -31,6 +31,12 @@ public class Player extends Actor
         int yLoc = getY();
         movementControls();
         applyGravity();
+        if(isTouching(PigBarrel1.class) || isTouching(PigBarrel2.class)){
+            Greenfoot.setWorld(new LoseScreen());
+        }
+        if(isTouching(Damsel.class)){
+            Greenfoot.setWorld(new WinScreen());
+        }
     }
     
     /**
@@ -57,12 +63,12 @@ public class Player extends Actor
         
         if (Greenfoot.isKeyDown("up") && isTouching(Ladder.class))
         {
-            
+             new GreenfootImage("FarquaadBack.png");
             deltaY = deltaY - speedY;
         }
         if (Greenfoot.isKeyDown("down") && isTouching(Ladder.class))
         {
-            
+             new GreenfootImage("FarquaadBack.png");
             deltaY = deltaY + speedY;
         }
         
@@ -76,9 +82,13 @@ public class Player extends Actor
      */
     public void applyGravity()
     {
-        if (isTouching(Platform.class) || isTouching(FlatFloor.class) || isTouching(FlatFloor2.class) || isTouching(Ladder.class))
+      
+           
+        
+        if (isTouching(Platform.class) || isTouching(FlatFloor.class) || isTouching(FlatFloor2.class))
         {
-            deltaY = 0;     // Don't apply gravity.
+            new GreenfootImage("farquaad.png");
+            deltaY = -1;     // Don't apply gravity.
             isInAir = false;
         }
         else    
