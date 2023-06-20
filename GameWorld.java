@@ -19,7 +19,6 @@ public class GameWorld extends World
     public GameWorld()
     {    
         super(700, 800, 1);
-        addObject(player, 36,746);
         addObject(new Damsel(), 130, 75);
         addObject(new PigBarrel1(), 496, 161);
         //floor code
@@ -30,35 +29,39 @@ public class GameWorld extends World
         addObject(new FlatFloor(), 356, 795);
         addObject(new Platform2(),554,785);
         addObject(new Platform1(), 474,663);
-        addObject(new Platform1(), 178,642);
+        addObject(new Platform1(), 179,647);
         addObject(new FlatFloor2(), 1, 631);
         addObject(new Platform2(),225,522);
-        addObject(new Platform2(),514,501);
+        addObject(new Platform2(),515,507);
         addObject(new FlatFloor(),705,491);
-        addObject(new Platform1(), 467,386);
         addObject(new Platform1(), 368,378);
         addObject(new FlatFloor2(), 172, 368);
-        addObject(new FlatFloor2(), 79, 368);
+        addObject(new FlatFloor1(), 79, 368);
         addObject(new FlatFloor2(), 1, 368);
         addObject(new Platform2(),220,268);
-        addObject(new Platform2(),368,258);
+        addObject(new Platform2(),371,265);
+        addObject(new FlatFloor2(),564,392);
         addObject(new FlatFloor2(), 565, 247);
         addObject(new FlatFloor2(), 663, 247);
         addObject(new FlatFloor2(), 77, 136);
         addObject(new FlatFloor2(), 175, 136);
-        addObject(new Ladder(), 443,279);
+        
+        addObject(new TopLadder(), 443,279);
         addObject(new Ladder(), 443,340);
-        addObject(new Ladder(), 591,424);
-        addObject(new Ladder(), 591,468);
-        addObject(new Ladder(), 286,398);
+        addObject(new TopLadder(), 591,412);
+        addObject(new Ladder(), 591,456);
+        addObject(new TopLadder(), 286,398);
         addObject(new Ladder(), 286,470);
-        addObject(new Ladder(), 165,555);
-        addObject(new Ladder(), 165,600);
+        
         addObject(new Ladder(), 478,547);
-        addObject(new Ladder(), 478,523);
+        addObject(new TopLadder(), 478,523);
         addObject(new Ladder(), 478,619);
-        addObject(new Ladder(), 332,683);
-        addObject(new Ladder(), 332,748);
+        addObject(new TopLadder(), 214,664);
+        addObject(new TopLadder(), 231,153);
+        addObject(new Ladder(), 231,217);
+        addObject(new Ladder(), 214,708);
+        addObject(new Ladder(), 214,752);
+        addObject(player, 36,746);
     }
 
     public void act(){

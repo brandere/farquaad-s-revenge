@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Platform2 extends Platform
+public class Platform2 extends FlatFloor
 {
     /**
      * Act - do whatever the Platform2 wants to do. This method is called whenever
@@ -14,6 +14,6 @@ public class Platform2 extends Platform
      */
     public void act()
     {
-       setRotation(-4);
+       //setRotation(-4);
     }
 }

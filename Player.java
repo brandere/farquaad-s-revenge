@@ -1,36 +1,31 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.List;
 
 /**
  * Character that can only jump when not in air.
  */
 public class Player extends Actor
 {
-    int deltaX;
-    int deltaY;
-    final int speedX = 4;
-    final int speedY = 4;
-    final int jumpSpeed = 15;
-    final int gravity = 1;
+    int walkSpeed = 5;
+    int vSpeed = 0;
+    int acceleration = 1;
+    int jumpStrength = 16;
     
-    /**
-     * Boolean (True/False) variable used to remember whether character is in air or not.
-     */
-    boolean isInAir;
-    
+    int frame = 1;
+    int animationCounter = 0;
 
-    
-    
-    
-    /**
-     * Act - do whatever the OneJumpPlayer wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act()
-    {
-        int xLoc = getX();
-        int yLoc = getY();
-        movementControls();
-        applyGravity();
+    public void act() {
+        checkCommand();
+        checkFall();
+        if(!isTouching(Ladder.class)){
+            checkPlatformAbove();
+        }
+        endGame();
+
+        
+    }
+    //call new world if win or lose
+    public void endGame(){
         if(isTouching(PigBarrel1.class) || isTouching(PigBarrel2.class)){
             Greenfoot.setWorld(new LoseScreen());
         }
@@ -38,63 +33,135 @@ public class Player extends Actor
             Greenfoot.setWorld(new WinScreen());
         }
     }
-    
-    /**
-     * Checks movement keys and updates position.
-     */
-    public void movementControls()
+    //figure out whic key user is pressing
+    public void checkCommand()
     {
-        deltaX = 0;
-        
-        if (Greenfoot.isKeyDown("left"))
-        {
-            deltaX = deltaX - speedX;
-        }
-        
-        if (Greenfoot.isKeyDown("right"))
-        {
-            deltaX = deltaX + speedX;
-        }
-        
-        if (isInAir == false && Greenfoot.isKeyDown("space"))
-        {
-            deltaY = -jumpSpeed;
-        }
-        
-        if (Greenfoot.isKeyDown("up") && isTouching(Ladder.class))
-        {
-             new GreenfootImage("FarquaadBack.png");
-            deltaY = deltaY - speedY;
-        }
-        if (Greenfoot.isKeyDown("down") && isTouching(Ladder.class))
-        {
-             new GreenfootImage("FarquaadBack.png");
-            deltaY = deltaY + speedY;
-        }
-        
-        
-        
-        setLocation(getX() + deltaX, getY() + deltaY);
-    }
-    
-    /**
-     * Checks whether standing on platform, and applies gravity if not.
-     */
-    public void applyGravity()
-    {
-      
-           
-        
-        if (isTouching(Platform.class) || isTouching(FlatFloor.class) || isTouching(FlatFloor2.class))
+        if(Greenfoot.isKeyDown("right"))
         {
             new GreenfootImage("farquaad.png");
-            deltaY = -1;     // Don't apply gravity.
-            isInAir = false;
+            moveRight();
         }
-        else    
+        if(Greenfoot.isKeyDown("left"))
         {
-            deltaY = deltaY + gravity;// Apply gravity.
-            isInAir = true;
+            new GreenfootImage("farquaad.png");
+            moveLeft();
+        }
+        if (Greenfoot.isKeyDown("up")) {
+            new GreenfootImage("Farquaadback.png");
+            moveUp();
+        }
+        if (Greenfoot.isKeyDown("down")) {
+            new GreenfootImage("Farquaadback.png");
+            moveDown();
+        }
+        if(Greenfoot.isKeyDown("space")&& onGround())
+        {
+          jump();
         }
     }
+    //player walks right
+    public void moveRight()
+    {
+        setLocation(getX()+walkSpeed, getY());          
+    }
+    //player walks left
+    public void moveLeft()
+    {
+        setLocation(getX()-walkSpeed, getY());
+    }
+    //player climbs up ladder
+    public void moveUp() {
+        if (isTouching(Ladder.class)) {
+            setLocation(getX(), getY()-walkSpeed);       
+        }
+    }
+    //player climbs down ladder
+    public void moveDown() {
+         if (isTouching(Ladder.class)) {
+            setLocation(getX(), getY()+walkSpeed);       
+        }       
+    }
+    //
+    public void jump()
+    {
+        //jumping
+        vSpeed = vSpeed - jumpStrength; 
+        //set position of jump
+        fall();
+    }
+    //set position of jump
+    public void fall()
+    {
+        setLocation(getX(), getY() + vSpeed);
+        if(vSpeed <=9)
+        {
+            vSpeed = vSpeed + acceleration;
+        }
+        
+    }
+    //keeps changing jump position until on ground
+    public void checkFall()
+    {
+        if(onGround())
+        {
+            vSpeed = 0;
+        }
+        else
+        {
+            //prevents player from falling down ladder
+            if (!isTouching(Ladder.class)){
+                fall();
+            }
+        }
+    }
+    //fins out if player is hitting head on platform
+    public void checkPlatformAbove()
+    {
+        int farquaadHeight = (getImage().getHeight()/-2);
+        Actor ceiling = getOneObjectAtOffset(0, farquaadHeight, FlatFloor.class);
+        //if intersecting ceiling set vertical speed so player will start to fall
+        if(ceiling != null)
+        {
+            vSpeed = 1;
+            hitHead(ceiling);
+        }
+    }
+    //position player just below platform
+    public void hitHead(Actor ceiling)
+    {
+        int ceilingHeight = ceiling.getImage().getHeight();
+        int newY = ceiling.getY() + (ceilingHeight + getImage().getHeight())/2;
+        setLocation(getX(), newY);
+    }
+    //check to see if bottom of player is touching top of platform
+    public boolean onGround()
+    {
+        Actor ground = getOneObjectAtOffset(0, getImage().getHeight()/2, FlatFloor.class);
+        Actor topLadder = getOneObjectAtOffset(0, getImage().getHeight()/2, TopLadder.class);
+        if(ground == null)
+        {
+            return false;
+        }
+        else
+        {
+            //check topLadder so player can go down ladder
+            if(topLadder == null){
+                moveToGround(ground);
+                return true;
+            }
+            
+            else {
+                return false;
+            }
+        }
+    }
+    //position player on top of platform below
+    public void moveToGround(Actor ground)
+    {
+        int groundHeight = ground.getImage().getHeight();
+        int newY = ground.getY() - (groundHeight + getImage().getHeight())/2;
+        setLocation(getX(), newY);
+    }
 }
+
+
