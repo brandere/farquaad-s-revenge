@@ -1,8 +1,10 @@
 #Greenfoot project file
+class.Damsel.image=Damsel.png
 class.FlatFloor.image=Platform2.png
 class.FlatFloor2.image=Platform2.png
 class.GameWorld.image=Untitled.png
 class.Help.image=images.png
+class.Ladder.image=Ladder.png
 class.LoseScreen.image=losescreen.png
 class.PigBarrel1.image=pig\ 2.png
 class.PigBarrel2.image=pig\ 1.png
@@ -111,10 +113,10 @@ dependency8.type=UsesDependency
 dependency9.from=GameWorld
 dependency9.to=Platform1
 dependency9.type=UsesDependency
-editor.fx.0.height=0
-editor.fx.0.width=0
-editor.fx.0.x=0
-editor.fx.0.y=0
+editor.fx.0.height=739
+editor.fx.0.width=816
+editor.fx.0.x=232
+editor.fx.0.y=82
 height=1000
 package.numDependencies=32
 package.numTargets=24

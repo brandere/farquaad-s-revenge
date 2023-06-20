@@ -19,10 +19,13 @@ public class SplashScreen extends World
         super(700, 800, 1); 
  
     
-        if (Greenfoot.isKeyDown("backspace")){
-            Greenfoot.setWorld(new StartScreen());
-        }
 
     }
+    public void act(){
+        if (Greenfoot.isKeyDown("BACKSPACE")){
+            Greenfoot.setWorld(new StartScreen());
+        }
+    }
 }
+
 
