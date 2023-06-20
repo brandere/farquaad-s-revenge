@@ -22,11 +22,7 @@ public class GameWorld extends World
         addObject(new Damsel(), 130, 75);
         addObject(new PigBarrel1(), 496, 161);
         //floor code
-        addObject(new FlatFloor2(), 20, 795);
-        addObject(new FlatFloor2(), 69, 795);
-        addObject(new FlatFloor2(), 165, 795);
-        addObject(new FlatFloor2(), 260, 795);
-        addObject(new FlatFloor2(), 356, 795);
+
         addObject(new Platform2(),554,785);
         addObject(new Platform1(), 474,663);
         addObject(new Platform1(), 179,647);
@@ -45,8 +41,7 @@ public class GameWorld extends World
         addObject(new FlatFloor2(), 663, 247);
         addObject(new FlatFloor2(), 77, 136);
         addObject(new FlatFloor2(), 175, 136);
-        
-        addObject(new TopLadder(), 443,279);
+
         addObject(new Ladder(), 443,340);
         addObject(new TopLadder(), 591,412);
         addObject(new Ladder(), 591,456);
@@ -56,12 +51,7 @@ public class GameWorld extends World
         addObject(new Ladder(), 478,547);
         addObject(new TopLadder(), 478,523);
         addObject(new Ladder(), 478,619);
-        addObject(new TopLadder(), 214,664);
-        addObject(new TopLadder(), 231,153);
-        addObject(new Ladder(), 231,217);
-        addObject(new Ladder(), 214,708);
-        addObject(new Ladder(), 214,752);
-        addObject(player, 36,746);
+
     }
 
     public void act(){
