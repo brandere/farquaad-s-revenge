@@ -97,7 +97,6 @@ public class Player extends Actor
         {
             vSpeed = vSpeed + acceleration;
         }
-        
     }
     //keeps changing jump position until on ground
     public void checkFall()
