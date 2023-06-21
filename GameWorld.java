@@ -19,8 +19,11 @@ public class GameWorld extends World
     public GameWorld()
     {    
         super(700, 800, 1);
+        
         addObject(new Damsel(), 130, 75);
-        addObject(new PigBarrel1(), 496, 161);
+        addObject(new Shrek(), 572, 188);
+        addObject(new PigBarrel1(), 533, 195);
+        addObject(new PigStack(), 652, 203);
         //floor code
         addObject(new FlatFloor2(), 20, 795);
         addObject(new FlatFloor2(), 69, 795);
@@ -56,27 +59,30 @@ public class GameWorld extends World
         addObject(new Ladder(), 478,547);
         addObject(new TopLadder(), 478,523);
         addObject(new Ladder(), 478,619);
+
         addObject(new TopLadder(), 214,664);
         addObject(new TopLadder(), 231,153);
         addObject(new Ladder(), 231,217);
         addObject(new Ladder(), 214,708);
         addObject(new Ladder(), 214,752);
-        addObject(new Shrek(), 535, 187);
-        
-        addObject(new PigStack(), 627, 204);
-        addObject(player, 36,746);
+    
+        addObject(player, 44, 755);
+       
     }
 
     public void act(){
         getPig++;
         pigBarrel++;
-        if (getPig == 540){
+        //Targetted pig timer
+        if (getPig == 480){
             addObject(new PigBarrel2(),player.getX(), 50);
             getPig = 0;
         }
+        //Normal pig timer
         if(pigBarrel == 240){
-            addObject(new PigBarrel1(),496,161);
+            addObject(new PigBarrel1(),533,195);
             pigBarrel = 0;
+            pigBarrel++;
         }
     }
 
