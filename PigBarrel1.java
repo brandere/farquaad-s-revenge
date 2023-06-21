@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class PigBarrel1 extends Actor
 {
     private int gravity = 9;
-    int speed = 1;
+    int speed = 2;
     //Animation
     int aniTimer;
     int aniCounter;

@@ -29,7 +29,7 @@ public class Shrek extends Actor
     public void animate()
     {
         //To not animate too quickly, only animate every 6 act cycles - alter this if your images are switching too quickly
-        if (aniTimer % 55 == 0){
+        if (aniTimer % 50 == 0){
             //Set image based on current aniCounter value
             if (aniCounter == 1){setImage(s1);}
             else if (aniCounter == 2){setImage(s3);}
