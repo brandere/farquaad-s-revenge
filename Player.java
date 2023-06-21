@@ -36,21 +36,21 @@ public class Player extends Actor
     //figure out whic key user is pressing
     public void checkCommand()
     {
-        if(Greenfoot.isKeyDown("right"))
+        if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("D"))
         {
             setImage("farquaad.png");
             moveRight();
         }
-        if(Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("A"))
         {
             setImage("farquaad.png");
             moveLeft();
         }
-        if (Greenfoot.isKeyDown("up")) {
+        if (Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("W")) {
             setImage("Farquaadback.png");
             moveUp();
         }
-        if (Greenfoot.isKeyDown("down")) {
+        if (Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("S")) {
             setImage("Farquaadback.png");
             moveDown();
         }
