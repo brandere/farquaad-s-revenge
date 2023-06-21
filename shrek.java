@@ -20,6 +20,7 @@ public class Shrek extends Actor
     public void act()
     {
     animate();
+
     }
 
     /**
