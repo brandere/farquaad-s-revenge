@@ -12,7 +12,7 @@ public class Player extends Actor
     int acceleration = 1;
     int jumpStrength = 16;
     int frame = 1;
-    int animationCounter = 0;
+    int animationCounter = 0; 
 
     public void act() {
         checkCommand();
