@@ -6,13 +6,12 @@ import java.util.List;
  */
 public class Player extends Actor
 {
-    int walkSpeed = 5;
+    int walkSpeed = 3;
     //vertical speed
     int vSpeed = 0;
     int acceleration = 1;
     int jumpStrength = 16;
-    int frame = 1;
-    int animationCounter = 0;
+    int animationCounter = 0; 
 
     public void act() {
         checkCommand();
@@ -97,7 +96,6 @@ public class Player extends Actor
         {
             vSpeed = vSpeed + acceleration;
         }
-        
     }
     //keeps changing jump position until on ground
     public void checkFall()

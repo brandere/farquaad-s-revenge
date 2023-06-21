@@ -79,7 +79,7 @@ public class GameWorld extends World
             getPig = 0;
         }
         //Normal pig timer
-        if(pigBarrel == 240){
+        if(pigBarrel == 200){
             addObject(new PigBarrel1(),533,195);
             pigBarrel = 0;
             pigBarrel++;
