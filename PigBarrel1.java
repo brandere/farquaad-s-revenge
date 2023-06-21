@@ -10,6 +10,7 @@ public class PigBarrel1 extends Actor
 {
     private int gravity = 9;
     int speed = 1;
+    //Animation
     int aniTimer;
     int aniCounter;
     GreenfootImage s1 = new GreenfootImage("PigUp.png");
@@ -23,19 +24,22 @@ public class PigBarrel1 extends Actor
      */
     public void act()
     {
+        //X & Y location
          int xLoc = getX();
          int yLoc = getY();
+         //Gravity
              if(!isTouching(Platform1.class)){
                 setLocation(xLoc, yLoc + gravity);
              
             }
+            //Keep in world
             if (xLoc >= 690){
                  setLocation(xLoc - 20, yLoc + gravity);
             }
             if (xLoc <= 10){
                  setLocation(xLoc - 20, yLoc + gravity);
             }
-            //Detect Collision
+            //Detect Movement
             if (isTouching(Platform1.class)){
                 setLocation(xLoc, yLoc);
                
@@ -56,15 +60,15 @@ public class PigBarrel1 extends Actor
             
                 move(4);
             }
-
+            //Remove Object
             if (xLoc < 10){
                getWorld().removeObject(this);
             }
+            //Call method
             animate();
 }
  public void animate()
     {
-        //To not animate too quickly, only animate every 6 act cycles - alter this if your images are switching too quickly
         if (aniTimer % 10 == 0){
             //Set image based on current aniCounter value
             if (aniCounter == 1){setImage(s1);}
