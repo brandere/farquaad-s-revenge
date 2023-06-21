@@ -12,7 +12,7 @@ public class PigBarrel2 extends Actor
 
     int speed = 2;
 
-    int speed = 5;
+   
 
 
  
