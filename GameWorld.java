@@ -19,7 +19,7 @@ public class GameWorld extends World
     public GameWorld()
     {    
         super(700, 800, 1);
-        addObject(new Player(), 44, 747);
+        
         addObject(new Damsel(), 130, 75);
         addObject(new Shrek(), 572, 188);
         addObject(new PigBarrel1(), 533, 195);
@@ -65,8 +65,8 @@ public class GameWorld extends World
         addObject(new Ladder(), 231,217);
         addObject(new Ladder(), 214,708);
         addObject(new Ladder(), 214,752);
-        addObject(new Shrek(), 535, 187);
-        
+    
+        addObject(player, 44, 747);
        
     }
 
@@ -82,6 +82,7 @@ public class GameWorld extends World
         if(pigBarrel == 240){
             addObject(new PigBarrel1(),533,195);
             pigBarrel = 0;
+            pigBarrel++;
         }
     }
 
