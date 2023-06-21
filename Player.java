@@ -36,22 +36,18 @@ public class Player extends Actor
     //figure out whic key user is pressing
     public void checkCommand()
     {
-        if(Greenfoot.isKeyDown("right"))
+        if(Greenfoot.isKeyDown("right") || Greenfoot.isKeyDown("D"))
         {
-            setImage("farquaad.png");
             moveRight();
         }
-        if(Greenfoot.isKeyDown("left"))
+        if(Greenfoot.isKeyDown("left") || Greenfoot.isKeyDown("A"))
         {
-            setImage("farquaad.png");
             moveLeft();
         }
-        if (Greenfoot.isKeyDown("up")) {
-            setImage("Farquaadback.png");
+        if (Greenfoot.isKeyDown("up") || Greenfoot.isKeyDown("W")) {
             moveUp();
         }
-        if (Greenfoot.isKeyDown("down")) {
-            setImage("Farquaadback.png");
+        if (Greenfoot.isKeyDown("down") || Greenfoot.isKeyDown("S")) {
             moveDown();
         }
         if(Greenfoot.isKeyDown("space")&& onGround())
@@ -62,22 +58,26 @@ public class Player extends Actor
     //player walks right
     public void moveRight()
     {
+        setImage("farquaad.png");
         setLocation(getX()+walkSpeed, getY());          
     }
     //player walks left
     public void moveLeft()
     {
+        setImage("farquaad.png");
         setLocation(getX()-walkSpeed, getY());
     }
     //player climbs up ladder
     public void moveUp() {
         if (isTouching(Ladder.class)) {
+            setImage("Farquaadback.png");
             setLocation(getX(), getY()-walkSpeed);       
         }
     }
     //player climbs down ladder
     public void moveDown() {
          if (isTouching(Ladder.class)) {
+             setImage("Farquaadback.png");
             setLocation(getX(), getY()+walkSpeed);       
         }       
     }
