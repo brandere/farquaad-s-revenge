@@ -66,7 +66,7 @@ public class GameWorld extends World
         addObject(new Ladder(), 214,708);
         addObject(new Ladder(), 214,752);
     
-        addObject(player, 44, 747);
+        addObject(player, 44, 755);
        
     }
 
