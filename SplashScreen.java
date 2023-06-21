@@ -21,6 +21,7 @@ public class SplashScreen extends World
     
 
     }
+    //controls for going back to the start screen when you press backspace
     public void act(){
         if (Greenfoot.isKeyDown("BACKSPACE")){
             Greenfoot.setWorld(new StartScreen());

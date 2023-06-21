@@ -14,7 +14,7 @@ public class Enter extends Actor
      */
     public void act()
     {
-       
+       //to desply text of"press enter to play the game" on the start screen
          GreenfootImage img = new GreenfootImage (900,100);//creates image
        //img.setColor(new Color(0,0,0));//sets color
        //img.fill();//Fills image

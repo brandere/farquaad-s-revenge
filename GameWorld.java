@@ -1,9 +1,11 @@
+
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
  * Write a description of class MyWorld here.
- * 
- * @author (your name) 
+ *
+ * @author (your name)
  * @version (a version number or a date)
  */
 public class GameWorld extends World
@@ -14,15 +16,20 @@ public class GameWorld extends World
     int countDown = 10;
     /**
      * Constructor for objects of class MyWorld.
-     * 
+     *
      */
     public GameWorld()
     {    
+        //adding objects to the world
         super(700, 800, 1);
         addObject(new Damsel(), 130, 75);
         addObject(new PigBarrel1(), 496, 161);
         //floor code
-
+        addObject(new FlatFloor2(), 20, 795);
+        addObject(new FlatFloor2(), 69, 795);
+        addObject(new FlatFloor2(), 165, 795);
+        addObject(new FlatFloor2(), 260, 795);
+        addObject(new FlatFloor2(), 356, 795);
         addObject(new Platform2(),554,785);
         addObject(new Platform1(), 474,663);
         addObject(new Platform1(), 179,647);
@@ -41,17 +48,25 @@ public class GameWorld extends World
         addObject(new FlatFloor2(), 663, 247);
         addObject(new FlatFloor2(), 77, 136);
         addObject(new FlatFloor2(), 175, 136);
-
+       
+        addObject(new TopLadder(), 443,279);
         addObject(new Ladder(), 443,340);
         addObject(new TopLadder(), 591,412);
         addObject(new Ladder(), 591,456);
         addObject(new TopLadder(), 286,398);
         addObject(new Ladder(), 286,470);
-        
+       
         addObject(new Ladder(), 478,547);
         addObject(new TopLadder(), 478,523);
         addObject(new Ladder(), 478,619);
-
+        addObject(new TopLadder(), 214,664);
+        addObject(new TopLadder(), 231,153);
+        addObject(new Ladder(), 231,217);
+        addObject(new Ladder(), 214,708);
+        addObject(new Ladder(), 214,752);
+        addObject(player, 36,746);
+        addObject(new Shrek(), 534, 184);
+        addObject(new pigStack(), 589,208);
     }
 
     public void act(){
@@ -66,6 +81,17 @@ public class GameWorld extends World
             pigBarrel = 0;
         }
     }
+    
+    public void music(){
+        Greenfoot.playSound("rumble");
+    }
+    
+    
+    
+    
+    
+    
+
 
 }
 

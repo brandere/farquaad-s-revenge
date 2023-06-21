@@ -1,5 +1,4 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
 /**
  * Write a description of class shrek here.
  * 
@@ -25,29 +24,27 @@ public class Shrek extends Actor
     
     animate();
     }
-
     /**
      * animate - Animates the Fireball
      */
     public void animate()
     {
-        //To not animate too quickly, only animate every 6 act cycles - alter this if your images are switching too quickly
+        //animations
         if (aniTimer % 30 == 0){
-            //Set image based on current aniCounter value
+            
+            
             if (aniCounter == 1){setImage(s1);}
             else if (aniCounter == 2){setImage(s3);}
             else if (aniCounter == 3){setImage(s2);}
-            
 
-            //Increment aniCounter - if it is 5, set it back to 1
+
+            
             aniCounter++;
             if (aniCounter == 10){ aniCounter=1;}
         }
-
-        //Increment aniTimer
+        
         aniTimer++;
-
        
     }
-    }
+}
 

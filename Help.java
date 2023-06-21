@@ -14,6 +14,7 @@ public class Help extends Actor
      */
     public void act()
     {
+        //code for if object i9s clicked go from start screen to splash screen
         if(Greenfoot.mouseClicked(this)){
             Greenfoot.setWorld(new SplashScreen());
         }
